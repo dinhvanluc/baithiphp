@@ -1,5 +1,5 @@
 ﻿<?php
-include '../config.php';
+include 'config.php';
 
 // Lấy danh sách sản phẩm từ database
 $sql = "SELECT * FROM item_sale";
@@ -66,14 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <td><?= date('d/m/Y', strtotime($row['expired_date'])) ?></td>
                             <td><?= $row['note'] ?></td>
                             <td>
-                                <a href="edit_item.php?id=<?= $row['id'] ?>" class="text-warning">
-                                    <i class="fas fa-edit"></i> Sửa
-                                </a>
-                                &nbsp;|&nbsp;
-                                <a href="delete_item.php?id=<?= $row['id'] ?>" class="text-danger"
-                                    onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này?')">
-                                    <i class="fas fa-trash"></i> Xóa
-                                </a>
+                                <a href="edit_item.php?id=<?= $row['id'] ?>" class="text-warning"><i class="fas fa-edit"></i></a>
+                                <a href="delete_item.php?id=<?= $row['id'] ?>" class="text-danger" onclick="return confirm('Bạn có chắc muốn xóa?')"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                 <?php }

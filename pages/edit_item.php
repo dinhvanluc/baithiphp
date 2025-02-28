@@ -1,5 +1,5 @@
 ﻿<?php
-include '../config.php';
+include 'config.php';
 
 // Kiểm tra xem có ID sản phẩm không
 if (!isset($_GET['id'])) {
